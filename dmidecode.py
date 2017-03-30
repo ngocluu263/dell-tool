@@ -215,10 +215,7 @@ def _show(info):
               )
 
     print ' =================================================== \n'
-    print ' DISKs: ' \
-              '\n + Disks list: %s, '  % (
-              os.system('sudo lshw -class disk'),
-              )
+    print ('DISKs:  %s' % os.system('sudo lshw -class disk'))
 
 if __name__ == '__main__':
     profile()
