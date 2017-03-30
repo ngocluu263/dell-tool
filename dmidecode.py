@@ -219,5 +219,10 @@ def _show(info):
     print ' DVD/HardDisk:'
     print (os.system('sudo lshw -class disk -short'))
 
+
+print ' =================================================== \n'
+print ' Network:'
+print (os.system('sudo lshw -class network -short'))
+
 if __name__ == '__main__':
     profile()
