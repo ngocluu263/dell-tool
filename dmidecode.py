@@ -65,7 +65,7 @@ def humanize(info):
             cpu['Core Count'],
             cpu['Thread Count'],
             )
-    
+
     cnt, total, unit = 0, 0, None
     slotsnum = 0
     for mem in _get('memory device'):
@@ -158,13 +158,18 @@ def _show(info):
         )
 
     for cpu in _get('processor'):
-        print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
-            cpu['Manufacturer'],
-            cpu['Family'],
-            cpu['Max Speed'],
+        # print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
+        #     cpu['Manufacturer'],
+        #     cpu['Family'],
+        #     cpu['Max Speed'],
+        #     cpu['Core Count'],
+        #     cpu['Thread Count'],
+        #     )
+        print ' CPU: %s (Core: %s, Thead: %s)' % (
+            cpu['Version'],
             cpu['Core Count'],
             cpu['Thread Count'],
-            )
+        )
 
     cnt, total, unit = 0, 0, None
     for mem in _get('memory device'):
