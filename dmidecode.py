@@ -166,7 +166,8 @@ def _show(info):
         #     cpu['Core Count'],
         #     cpu['Thread Count'],
         #     )
-        print ' CPU: %s (Core: %s, Thead: %s)' % (
+        print ' CPU: ' \
+              ' \n %s (Core: %s, Thead: %s)' % (
             cpu['Version'],
             cpu['Core Count'],
             cpu['Thread Count'],
