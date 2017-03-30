@@ -157,7 +157,7 @@ def _show(info):
         system['Serial Number'],
         system['UUID'],
         )
-
+    print ' =================================================== \n'
     for cpu in _get('processor'):
         # print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
         #     cpu['Manufacturer'],
@@ -170,6 +170,13 @@ def _show(info):
             cpu['Version'],
             cpu['Core Count'],
             cpu['Thread Count'],
+        )
+    for cache in _get('cache'):
+        print ' CACHE: ' \
+              '\n %s: %s, %s' % (
+            cpu['Socket Designation'],
+            cpu['Installed Size'],
+            cpu['Maximum Size'],
         )
 
     print ' =================================================== \n'
