@@ -1,5 +1,5 @@
 __version__ = "0.8.1"
-
+import os
 
 TYPE = {
     0:  'bios',
@@ -215,7 +215,10 @@ def _show(info):
               )
 
     print ' =================================================== \n'
-
+    print ' DISKs: ' \
+              '\n + Disks list: %s, '  % (
+              os.system('sudo lshw -class disk'),
+              )
 
 if __name__ == '__main__':
     profile()
