@@ -184,7 +184,7 @@ def _show(info):
         total,
         unit,
         )
-    for physical_memory in _get('Physical Memory Array'):
+    for physical_memory in _get('physical memory array'):
         print ' Maximum Supported Memory: %s \n' % (
             physical_memory['Maximum Capacity'],
             )
