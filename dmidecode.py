@@ -172,8 +172,7 @@ def _show(info):
             cpu['Thread Count'],
         )
     for cache in _get('cache'):
-        print ' CACHE: ' \
-              '\n %s: %s, %s' % (
+        print '%s: Installed Size: %s, Maximum Size: %s' % (
             cache['Socket Designation'],
             cache['Installed Size'],
             cache['Maximum Size'],
