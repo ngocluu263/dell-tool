@@ -190,13 +190,10 @@ def _show(info):
               '\n + Version: %s, ' \
               '\n + BIOS Version String: %s, ' \
               '\n + Release Date: %s ' % (
+            bios['BIOS Revision'],
             bios['Version'],
-            bios['BIOS Version String'],
             bios['Release Date'],
         )
-
-
-
 
 if __name__ == '__main__':
     profile()
