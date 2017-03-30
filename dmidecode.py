@@ -1,5 +1,6 @@
 __version__ = "0.8.1"
 import os
+import subprocess
 
 TYPE = {
     0:  'bios',
@@ -140,7 +141,7 @@ def _get_output():
     output = subprocess.check_output(
         'PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin '
         'sudo dmidecode', shell=True)
-    print output
+    # print output
     return output
 
 
@@ -215,7 +216,7 @@ def _show(info):
               )
 
     print ' =================================================== \n'
-    print ('DISKs:  %s' % os.system('sudo lshw -class disk'))
+    print ('DISKs:  %s' % os.system('sudo lshw -class disk short'))
 
 if __name__ == '__main__':
     profile()
