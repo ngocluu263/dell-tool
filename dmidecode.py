@@ -195,5 +195,7 @@ def _show(info):
             bios['Release Date'],
         )
 
+    print ' =================================================== \n'
+
 if __name__ == '__main__':
     profile()
