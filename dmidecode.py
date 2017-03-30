@@ -186,8 +186,13 @@ def _show(info):
     print ' =================================================== \n'
 
     for bios in _get('bios'):
-        print ' BIOS: %s' % (
-            bios['BIOS Revision']
+        print ' BIOS: ' \
+              '\n + Version: %s, ' \
+              '\n + BIOS Version String: %s, ' \
+              '\n + Release Date: %s ' % (
+            bios['Version'],
+            bios['BIOS Version String'],
+            bios['Release Date'],
         )
 
 
