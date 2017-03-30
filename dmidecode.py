@@ -149,7 +149,7 @@ def _show(info):
         return [v for j, v in info if j == i]
 
     system = _get('system')[0]
-    print '%s \n %s \n (SN: %s, UUID: %s)' % (
+    print 'Manufacturer: %s \n Product Name: %s \n (SN: %s, UUID: %s)' % (
         system['Manufacturer'],
         system['Product Name'],
         system['Serial Number'],
@@ -157,7 +157,7 @@ def _show(info):
         )
 
     for cpu in _get('processor'):
-        print '%s \n %s \n %s \n (Core: %s, Thead: %s)' % (
+        print 'Manufacturer: %s \n Family: %s \n Max Speed: %s \n (Core: %s, Thead: %s)' % (
             cpu['Manufacturer'],
             cpu['Family'],
             cpu['Max Speed'],
