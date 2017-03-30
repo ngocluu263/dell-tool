@@ -174,9 +174,9 @@ def _show(info):
     for cache in _get('cache'):
         print ' CACHE: ' \
               '\n %s: %s, %s' % (
-            cpu['Socket Designation'],
-            cpu['Installed Size'],
-            cpu['Maximum Size'],
+            cache['Socket Designation'],
+            cache['Installed Size'],
+            cache['Maximum Size'],
         )
 
     print ' =================================================== \n'
