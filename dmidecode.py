@@ -185,6 +185,10 @@ def _show(info):
         )
     print ' =================================================== \n'
 
+    for bios in _get('bios'):
+        print ' BIOS: %s' % (
+            bios['BIOS Revision']
+        )
 
 
 
