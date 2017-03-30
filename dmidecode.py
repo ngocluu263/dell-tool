@@ -173,7 +173,7 @@ def _show(info):
         i, unit = mem['Size'].split()
         cnt += 1
         total += int(i)
-    print ' RAM: %d memory stick(s), %d %s in total' % (
+    print ' RAM: %d memory stick(s), %d %s in total \n' % (
         cnt,
         total,
         unit,
