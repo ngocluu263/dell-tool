@@ -149,6 +149,7 @@ def _show(info):
         return [v for j, v in info if j == i]
 
     system = _get('system')[0]
+    print ' ========== Hardware Information ===================='
     print ' Manufacturer: %s \n Product Name: %s \n SN: %s \n UUID: %s' % (
         system['Manufacturer'],
         system['Product Name'],
@@ -172,7 +173,7 @@ def _show(info):
         i, unit = mem['Size'].split()
         cnt += 1
         total += int(i)
-    print 'RAM: %d memory stick(s), %d %s in total' % (
+    print ' RAM: %d memory stick(s), %d %s in total' % (
         cnt,
         total,
         unit,
