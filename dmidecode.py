@@ -200,7 +200,7 @@ def _show(info):
     for baseboard in _get('base board'):
         print ' Motherboard: ' \
               '\n + Product Name: %s, ' \
-              '\n + BIOS Version String: %s, ' \
+              '\n + Version: %s, ' \
               '\n + Serial Number: %s ' % (
             baseboard['Product Name'],
             baseboard['Version'],
