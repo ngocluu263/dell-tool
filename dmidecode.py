@@ -44,6 +44,7 @@ def parse_dmi(content):
                 info.append((TYPE[typ], _parse_handle_section(lines)))
     return info
 
+
 def humanize(info):
     def _get(i):
         return [v for j, v in info if j == i]
@@ -65,7 +66,6 @@ def humanize(info):
             cpu['Thread Count'],
             )
     
-
     cnt, total, unit = 0, 0, None
     slotsnum = 0
     for mem in _get('memory device'):
@@ -179,6 +179,9 @@ def _show(info):
         unit,
         )
     print ' =================================================== \n'
+
+
+
 
 
 if __name__ == '__main__':
