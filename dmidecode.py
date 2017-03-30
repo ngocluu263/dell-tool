@@ -149,7 +149,7 @@ def _show(info):
         return [v for j, v in info if j == i]
 
     system = _get('system')[0]
-    print ' ========== Hardware Information ===================='
+    print ' ========== Hardware Information ==================== \n'
     print ' Manufacturer: %s \n Product Name: %s \n SN: %s \n UUID: %s' % (
         system['Manufacturer'],
         system['Product Name'],
@@ -178,6 +178,7 @@ def _show(info):
         total,
         unit,
         )
+    print ' =================================================== \n'
 
 
 if __name__ == '__main__':
