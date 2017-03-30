@@ -221,7 +221,7 @@ def _show(info):
 
     print ' =================================================== \n'
     print ' Network:'
-    print (os.system('sudo lshw -class network'))
+    print (os.system('sudo lshw -class network -short'))
 
 if __name__ == '__main__':
     profile()
