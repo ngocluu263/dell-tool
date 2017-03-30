@@ -157,7 +157,7 @@ def _show(info):
         )
 
     for cpu in _get('processor'):
-        print '\n CPU: %s %s %s (Core: %s, Thead: %s)' % (
+        print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
             cpu['Manufacturer'],
             cpu['Family'],
             cpu['Max Speed'],
@@ -172,7 +172,7 @@ def _show(info):
         i, unit = mem['Size'].split()
         cnt += 1
         total += int(i)
-    print '\n RAM: %d memory stick(s), %d %s in total' % (
+    print 'RAM: %d memory stick(s), %d %s in total' % (
         cnt,
         total,
         unit,
