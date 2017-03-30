@@ -197,5 +197,18 @@ def _show(info):
 
     print ' =================================================== \n'
 
+    for baseboard in _get('base board'):
+        print ' Motherboard: ' \
+              '\n + Product Name: %s, ' \
+              '\n + BIOS Version String: %s, ' \
+              '\n + Serial Number: %s ' % (
+            baseboard['Product Name'],
+            baseboard['Version'],
+            baseboard['Serial Number'],
+              )
+
+    print ' =================================================== \n'
+
+
 if __name__ == '__main__':
     profile()
