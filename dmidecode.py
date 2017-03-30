@@ -216,7 +216,8 @@ def _show(info):
               )
 
     print ' =================================================== \n'
-    print ('DISKs:  %s' % os.system('sudo lshw -class disk -short'))
+    print ' DVD/HardDisk:'
+    print (os.system('sudo lshw -class disk -short'))
 
 if __name__ == '__main__':
     profile()
