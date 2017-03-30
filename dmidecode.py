@@ -171,6 +171,7 @@ def _show(info):
             cpu['Thread Count'],
         )
 
+    print ' =================================================== \n'
     cnt, total, unit = 0, 0, None
     for mem in _get('memory device'):
         if mem['Size'] == 'No Module Installed':
@@ -183,6 +184,10 @@ def _show(info):
         total,
         unit,
         )
+    for physical_memory in _get('Physical Memory Array'):
+        print ' Maximum Supported Memory: %s \n' % (
+            physical_memory['Maximum Capacity'],
+            )
     print ' =================================================== \n'
 
     for bios in _get('bios'):
