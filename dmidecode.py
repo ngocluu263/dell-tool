@@ -1,6 +1,5 @@
-__version__ = "0.8.1"
-import os
-from subprocess import Popen, PIPE
+__version__ = "1.0"
+import subprocess
 
 TYPE = {
     0:  'bios',
@@ -224,11 +223,15 @@ def _show(info):
 
     print ' =================================================== \n'
     print ' DVD/HardDisk:'
-    print (os.system('sudo lshw -class disk -short'))
+    result_disk = subprocess.Popen("sudo lshw -class disk -short",
+                               stdout=subprocess.PIPE, shell=True).communicate()[0]
+    print result_disk
 
     print ' =================================================== \n'
     print ' Network:'
-    print (os.system('sudo lshw -class network -short'))
+    result_network = subprocess.Popen("sudo lshw -class network -short",
+                               stdout=subprocess.PIPE, shell=True).communicate()[0]
+    print result_network
 
 if __name__ == '__main__':
     profile()
