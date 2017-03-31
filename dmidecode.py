@@ -173,13 +173,13 @@ def _show(info):
 
     print ' =================================================== \n'
     print ' DVD/HardDisk:'
-    result_disk = subprocess.Popen("sudo lshw -class disk -short",
+    result_disk = subprocess.Popen("sudo lshw -class disk | grep -iE 'description|vendor|product|serial",
                                stdout=subprocess.PIPE, shell=True).communicate()[0]
     print result_disk
 
     print ' =================================================== \n'
     print ' Network:'
-    result_network = subprocess.Popen("lshw -class network | grep -iE -m 4 'description|vendor|product|serial'",
+    result_network = subprocess.Popen("sudo lshw -class network | grep -iE 'description|vendor|product|serial'",
                                stdout=subprocess.PIPE, shell=True).communicate()[0]
     print result_network
 
