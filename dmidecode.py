@@ -167,13 +167,13 @@ def _show(info):
         #     cpu['Thread Count'],
         #     )
         print ' CPU: ' \
-              ' \n %s (Core: %s, Thead: %s)' % (
+              ' \n + %s (Core: %s, Thead: %s)' % (
             cpu['Version'],
             cpu['Core Count'],
             cpu['Thread Count'],
         )
     for cache in _get('cache'):
-        print ' %s: Installed Size: %s, Maximum Size: %s' % (
+        print ' + %s: Installed Size: %s, Maximum Size: %s' % (
             cache['Socket Designation'],
             cache['Installed Size'],
             cache['Maximum Size'],
@@ -188,14 +188,14 @@ def _show(info):
         cnt += 1
         total += int(i)
     print ' RAM: ' \
-          '\n %d memory stick(s), ' \
-          '\n %d %s in total' % (
+          '\n + %d memory stick(s), ' \
+          '\n + %d %s in total' % (
         cnt,
         total,
         unit,
         )
     for physical_memory in _get('physical memory array'):
-        print ' Maximum Supported Memory: %s \n' % (
+        print ' + Maximum Supported Memory: %s \n' % (
             physical_memory['Maximum Capacity'],
             )
     print ' =================================================== \n'
