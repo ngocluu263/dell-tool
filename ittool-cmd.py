@@ -163,9 +163,11 @@ def _show(info):
 
     for baseboard in _get('base board'):
         print ' Motherboard: ' \
+              '\n + Manufacturer: %s, ' \
               '\n + Product Name: %s, ' \
               '\n + Version: %s, ' \
               '\n + Serial Number: %s ' % (
+            baseboard['Manufacturer'],
             baseboard['Product Name'],
             baseboard['Version'],
             baseboard['Serial Number'],
