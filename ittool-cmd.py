@@ -130,14 +130,15 @@ def _show(info):
 
     print ' =================================================== \n'
     cnt, total, unit = 0, 0, None
+    print ' RAM: '
     for mem in _get('memory device'):
         if mem['Size'] == 'No Module Installed':
             continue
         i, unit = mem['Size'].split()
         cnt += 1
         total += int(i)
-    print ' RAM: ' \
-          '\n + %d memory stick(s), ' \
+        print ("+ Manufacturer: %s Type: %s Speed:%s " % (mem['Manufacturer'], mem['Type'], mem['Speed']))
+    print '\n + %d memory stick(s), ' \
           '\n + %d %s in total' % (
         cnt,
         total,
