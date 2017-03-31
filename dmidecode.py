@@ -173,7 +173,7 @@ def _show(info):
 
     print ' =================================================== \n'
     print ' DVD/HardDisk:'
-    result_disk = subprocess.Popen("sudo lshw -class disk | grep -iE 'description|vendor|product|serial",
+    result_disk = subprocess.Popen("sudo lshw -class disk | grep -iE 'description|vendor|product|serial'",
                                stdout=subprocess.PIPE, shell=True).communicate()[0]
     print result_disk
 
