@@ -137,7 +137,7 @@ def _show(info):
         i, unit = mem['Size'].split()
         cnt += 1
         total += int(i)
-        print (" + Manufacturer: %s, Type: %s Speed:%s, Size:%s" % (mem['Manufacturer'], mem['Type'], mem['Speed'], mem['Size']))
+        print (" + Manufacturer: %s, Type: %s Speed: %s, Size: %s" % (mem['Manufacturer'], mem['Type'], mem['Speed'], mem['Size']))
     print ' + %d memory stick(s), ' \
           '\n + %d %s in total' % (
         cnt,
