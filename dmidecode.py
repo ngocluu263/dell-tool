@@ -1,6 +1,6 @@
 __version__ = "0.8.1"
 import os
-import subprocess
+from subprocess import Popen, PIPE
 
 TYPE = {
     0:  'bios',
