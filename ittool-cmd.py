@@ -107,20 +107,23 @@ def _show(info):
         system['UUID'],
         )
     print ' =================================================== \n'
-    for cpu in _get('processor'):
-        # print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
-        #     cpu['Manufacturer'],
-        #     cpu['Family'],
-        #     cpu['Max Speed'],
-        #     cpu['Core Count'],
-        #     cpu['Thread Count'],
-        #     )
-        print ' CPU: ' \
-              ' \n + %s (Core: %s, Thead: %s)' % (
-            cpu['Version'],
-            cpu['Core Count'],
-            cpu['Thread Count'],
-        )
+    try:
+        for cpu in _get('processor'):
+            # print ' CPU: %s %s %s (Core: %s, Thead: %s)' % (
+            #     cpu['Manufacturer'],
+            #     cpu['Family'],
+            #     cpu['Max Speed'],
+            #     cpu['Core Count'],
+            #     cpu['Thread Count'],
+            #     )
+            print ' CPU: ' \
+                  ' \n + %s (Core: %s, Thead: %s)' % (
+                cpu['Version'],
+                cpu['Core Count'],
+                cpu['Thread Count'],
+            )
+    except:
+        print "Virtual Machine is not supported"
     for cache in _get('cache'):
         print ' + %s: Installed Size: %s, Maximum Size: %s' % (
             cache['Socket Designation'],
