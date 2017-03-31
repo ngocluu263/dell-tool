@@ -28,32 +28,3 @@ for disk in find_disks(inventory):
 print 'Num disks', numdisks
 print 'Total disk space', diskspace / (1024 ** 2)
 
-'''
-Sample output:
-
-'''
-
-from lxml import etree
-from subprocess import Popen, PIPE
-
-inventory = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
-inventory = etree.XML(inventory)
-
-# checking only for the disk here, subsequent checks for other hardware parts need to be done along.
-
-find_disks = etree.Xpath(".//node[@class='disk']")
-
-numdisk = 0
-diskspace = 0
-
-for disk in find_disks(inventory):
-    # check if this is hard disk or something else
-    if disk.find('size') is not None:
-        numdisk = numdisk + 1
-        diskspace = diskspace + int(disk.find('size').text)
-        print disk.find('description').text, disk.find('product').text, disk.find('logicalname').text
-        print 'Disk Space: ', disk.find('size').text
-        print 'Sector Size: ', disk.find('configuration/setting/[@id="sectorsize"]').get('value')
-
-        print 'Num Disks: ', numdisk
-        print 'Total Disk Space', diskspace / (1024 * 2)
