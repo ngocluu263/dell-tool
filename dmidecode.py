@@ -47,56 +47,6 @@ def parse_dmi(content):
     return info
 
 
-def humanize(info):
-    def _get(i):
-        return [v for j, v in info if j == i]
-    d = {}
-    system = _get('system')[0]
-    d['sn'] = 'SN: %s' % (
-    #    system['Manufacturer'],
-     #   system['Product Name'],
-        system['Serial Number'],
-        )
-    d['uuid'] = 'UUID: %s ' % (system['UUID'],)
-
-    for cpu in _get('processor'):
-        d['cpus'] = '%s %s %s (Core: %s, Thead: %s)' % (
-            cpu['Manufacturer'],
-            cpu['Family'],
-            cpu['Max Speed'],
-            cpu['Core Count'],
-            cpu['Thread Count'],
-            )
-
-    cnt, total, unit = 0, 0, None
-    slotsnum = 0
-    for mem in _get('memory device'):
-        if mem['Size'] == 'No Module Installed':
-            slotsnum += 1
-            continue
-        i, unit = mem['Size'].split()
-        slotsnum += 1
-        cnt += 1
-        total += int(i)
-    d['memory'] = '%d memory stick(s), %d %s in total' % (
-        cnt,
-        total,
-        unit,
-        )
-    d['slots'] = '%d memory slot(s)' % (slotsnum)
-    return d
-#    d = {}
-#    item = iter(info)
-#    while True:
-#        try:
-#            each = item.next()
-#        except StopIteration:
-#            break
-    #if d[each[0]] == 'processor':
-    
-#    return d
-
-
 def _parse_handle_section(lines):
     """
     Parse a section of dmidecode output
