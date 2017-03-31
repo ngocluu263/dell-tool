@@ -1,5 +1,7 @@
-__version__ = "1.0"
 import subprocess
+import os
+import sys
+__version__ = "1.0"
 
 TYPE = {
     0:  'bios',
@@ -125,7 +127,6 @@ def _parse_handle_section(lines):
 
 
 def profile():
-    import os, sys
     if os.isatty(sys.stdin.fileno()):
         content = _get_output()
     else:
@@ -136,7 +137,6 @@ def profile():
 
 
 def _get_output():
-    import subprocess
     output = subprocess.check_output(
         'PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin '
         'sudo dmidecode', shell=True)
