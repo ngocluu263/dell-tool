@@ -173,7 +173,8 @@ def _show(info):
 
     print ' =================================================== \n'
     print ' Disk:'
-    result_disk = subprocess.Popen("sudo lshw -class disk | grep -iE '*-disk|description|product|vendor|serial|size:'",
+    result_disk = subprocess.Popen("sudo lshw -class disk | "
+                                   "grep -iE '*-disk|*-cdrom|description|product|vendor|serial|size:'",
                                stdout=subprocess.PIPE, shell=True).communicate()[0]
     print result_disk
 
