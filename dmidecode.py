@@ -180,7 +180,7 @@ def _show(info):
     print ' =================================================== \n'
     print ' Network:'
     result_network = subprocess.Popen("sudo lshw -class network | "
-                                      "grep -iE '*-network|description|product|vendor|serial|size'",
+                                      "grep -iE '*-network|description|product|vendor|serial|size|capacity'",
                                stdout=subprocess.PIPE, shell=True).communicate()[0]
     print result_network
 
